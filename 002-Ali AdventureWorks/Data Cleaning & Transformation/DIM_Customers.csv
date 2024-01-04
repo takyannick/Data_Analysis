@@ -1,4 +1,4 @@
-﻿CustomerKey;city;First_Name;Last_Name;Full_Name;BirthDate;MaritalStatus;gender;DateFirstPurchase
+﻿CustomerKey;City;First_Name;Last_Name;Full_Name;BirthDate;MaritalStatus;gender;DateFirstPurchase
 11000;Rockhampton;Jon;Yang;Jon Yang;1971-10-06;M;Male;2021-01-19
 11001;Seaford;Eugene;Huang;Eugene Huang;1976-05-10;S;Male;2021-01-15
 11002;Hobart;Ruben;Torres;Ruben Torres;1971-02-09;M;Male;2021-01-07
