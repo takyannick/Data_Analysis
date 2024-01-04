@@ -1,14 +1,15 @@
-SELECT TOP (1000) [ProductKey]
-      ,[OrderDateKey]
-      ,[DueDateKey]
-      ,[ShipDateKey]
-      ,[CustomerKey]
-      ,[CurrencyKey]
-      ,[SalesTerritoryKey]
-      ,[SalesOrderNumber]
-	  ,[SalesOrderLineNumber]
-      ,[OrderQuantity]
-      ,[UnitPrice]
-      ,[SalesAmount]
-	  ,[ProductStandardCost]
-FROM [AdventureWorksDW2019].[dbo].[FactInternetSales]
+SELECT 
+	  s.SalesOrderNumber
+	  ,s.ProductKey
+      ,s.OrderDateKey as OrderDateKey
+      ,s.CustomerKey
+      ,s.CurrencyKey
+      ,st.SalesTerritoryRegion
+	  ,st.SalesTerritoryCountry
+      ,s.OrderQuantity
+      ,s.UnitPrice
+      ,s.SalesAmount
+	  ,s.ProductStandardCost
+FROM FactInternetSales as s left join DimSalesTerritory as st on st.SalesTerritoryKey = s.SalesTerritoryKey
+where left(OrderDateKey, 4) >= year(getdate()) - 2 
+Order by s.SalesOrderNumber asc
